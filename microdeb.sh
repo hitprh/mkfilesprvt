@@ -162,6 +162,8 @@ case $choice in
         wget -q -O /etc/microssh https://raw.githubusercontent.com/bannerpy/Files/main/micro.py
         chmod +x /etc/microssh
         sed -i "/DEFAULT_HOST = '127.0.0.1:443'/c\DEFAULT_HOST = '127.0.0.1:550'" /etc/microssh
+        clear
+        echo "$art"
         echo "Configuration for SSHWS on port 80 has been completed."
         ;;
     2)
@@ -170,10 +172,11 @@ case $choice in
        
         wget -q -O /etc/microssh https://raw.githubusercontent.com/hitprh/mkfilesprvt/main/microws.py
         chmod +x /etc/microssh
+        clear
 
         echo "MULTI WS installation completed."
 
-        
+        echo "$art"
         echo "MULTI WS is configured with the following ports:"
         echo "SSLWS: 8443, 9443, 7443"
         echo "SSHWS: 80, 8888, 880"
