@@ -257,6 +257,7 @@ service squid restart
 sed -i "s|127.0.0.1|$(curl -s https://api.ipify.org)|g" /etc/squid/squid.conf && service squid restart
 
 
+echo 'VersionAddendum <font color="#FF9800">MICROSSH.COM-OPENSSH</font>' | tee -a /etc/ssh/sshd_config 
 
 bash -c "sed -i '/ncp-disable/d' /etc/openvpn/server/*.conf; systemctl restart openvpn-server@{ec_s,s}erver_{tc,ud}p"
 
