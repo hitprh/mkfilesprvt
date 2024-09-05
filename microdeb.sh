@@ -6,7 +6,7 @@
 DEBIAN_SOURCES_LIST="/etc/apt/sources.list"
 
 
-
+sudo su
 # Update package list
 apt update || handle_error "Failed to update package list."
 art=$(cat << "EOF"
@@ -174,9 +174,10 @@ case $choice in
         chmod +x /etc/microssh
         clear
 
-        echo "MULTI WS installation completed."
+
 
         echo "$art"
+        echo "MULTI WS installation completed."
         echo "MULTI WS is configured with the following ports:"
         echo "SSLWS: 8443, 9443, 7443"
         echo "SSHWS: 80, 8888, 880"
@@ -252,7 +253,6 @@ apt install squid
 wget -qO /etc/squid/squid.conf https://raw.githubusercontent.com/Senpaiconfig/microsshpanel/main/squid.conf
 dos2unix -q /etc/squid/squid.conf
 service squid start
-service squid restart
 
 sed -i "s|127.0.0.1|$(curl -s https://api.ipify.org)|g" /etc/squid/squid.conf && service squid restart
 
