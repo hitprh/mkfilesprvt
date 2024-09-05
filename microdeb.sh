@@ -6,7 +6,7 @@
 DEBIAN_SOURCES_LIST="/etc/apt/sources.list"
 
 
-sudo su
+
 # Update package list
 apt update || handle_error "Failed to update package list."
 art=$(cat << "EOF"
